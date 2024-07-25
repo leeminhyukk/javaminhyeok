@@ -6,7 +6,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
-        // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+        // Scanner 를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
         int num1 = sc.nextInt();
 
         System.out.println("사칙연산 기호를 입력하세요: "); // +, -, *, /
@@ -16,16 +16,16 @@ public class App {
 
         System.out.print("두 번째 숫자를 입력하세요: ");
         int num2 = sc.nextInt();
-        // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
+        // Scanner 를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
 
 
-        // 선언. 2-7 int month= 8 과 동일.
+        // 선언. 강의 2-7 int month= 8을 참고했습니다.
         int result =0;
 
-        //사칙연산 기호를 저장한 변수. operator
+        //사칙연산 기호를 저장한 변수 = operator
         switch (operator){
 
-        // case 뒤에 조건. 변수에 따라  뒤에 result 값이 이렇게 계산된다.
+        // case 뒤에는 조건!! 변수에 따라 뒤에 result 값이 이렇게 계산되고, break 되도록 설정했습니다.
         case '+':
             result = num1 + num2;
 
@@ -47,9 +47,9 @@ public class App {
                 result = num1 / num2;
 
             }else {
-                System.out.println("나눗셈 연산에서 분모에  0이 입력될 수 없습니다.");
-                //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자만 입력이 가능하다.
-                result = 99999999;
+                System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자로 입력했습니다.
+                result = 999999999;
                 break;
 
 
@@ -57,7 +57,10 @@ public class App {
 
 
 
-        default:
+        //default
+
+            // result 를 입력하려다 자동완성 return 을 발견했습니다.
+            // 이거 쓰면 전에 했던 동작으로 돌아갈 줄 알았는데 그게 아니라서 깔끔한 마무리가 되는거같아요!
 }
 
 
