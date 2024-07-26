@@ -1,12 +1,20 @@
 package calculator;
 
 import java.util.Scanner;
+//Queue 배열을 사용하기 위해 2개의 import 추가. 2주차 2-16 강의 참고했습니다.
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // textString 이라는 문자를 사용하기 위한 선언. "exit" 라는 문자를 받기 위함입니다.
         String textString;
+
+        int intArray[] = new int[10];
+        int count = 0;
+        //10개짜리 배열 선언,생성 / 저장하는 변수 선언. count
 
 
         // 반복문 do -while 을 사용했습니다.while 이 false 가 나오기 전까지 반복됩니다.
@@ -28,7 +36,6 @@ public class App {
             System.out.print("두 번째 숫자를 입력하세요: ");
             int num2 = sc.nextInt();
             // Scanner 를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-
 
             // 선언. 강의 2-7 int month= 8을 참고했습니다.
             int result = 0;
@@ -62,32 +69,39 @@ public class App {
                         //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자로 입력했습니다.
                         result = 999999999;
                         break;
-
-
                     }
                     // 위에 값 중 예상된 값이 입력되지 않을 경우. ex. 기호 자리에 숫자입력.
+
                 default:
                     System.out.println("잘못 입력하셨습니다.");
 
-
-
             }
             System.out.println("결과: " + result);
+
+            intArray[count]=result;
+            count++;
+
+            if(count == intArray.length) {
+
+                for (int i = 0; i < intArray.length; i++) {
+                    intArray[i] = intArray[i + 1];
+                }
+            }
+
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
 
             // 위에 있는 int num2 = sc.nextInt(); 참고했고,
             // 숫자가 아니라서 Int 는 지우고 적어봤습니다.
             textString = sc.next();
 
-
-
-
-
-
             // 2주차 강의 2-6 if 에서 가위바위보 Objects.eqauls 를 참고해서 넣었습니다.
             // 해당 강의에서는 nextLine 을 사용했었는데
             //  sc.nextLine 으로 입력하니 더 계산하시겠습니까? 에 답을 입력 못해서 수정했습니다.
           }while(!  textString.equals("exit"));
+
+
+
 
         };
 
