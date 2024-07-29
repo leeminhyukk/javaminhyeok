@@ -2,8 +2,7 @@ package calculator;
 
 import java.util.Scanner;
 //Queue 배열을 사용하기 위해 2개의 import 추가. 2주차 2-16 강의 참고했습니다.
-import java.util.Queue;
-import java.util.LinkedList;
+
 
 public class App {
 
@@ -81,12 +80,30 @@ public class App {
             intArray[count]=result;
             count++;
 
+
+            // if 10개가 꽉 찼을 때, for 문을 사용해서 앞으로 한 칸 씩 밀어줬습니다.
+            // count 값을 9로 설정해서. 마지막 칸에 새로운 결과값이 입력되도록 했습니다.
             if(count == intArray.length) {
 
-                for (int i = 0; i < intArray.length; i++) {
+                for (int i = 0; i < intArray.length-1; i++) {
                     intArray[i] = intArray[i + 1];
+                    System.out.println(" 저장 공간이 꽉 차서 앞으로 한칸씩 이동합니다.");
+                   count = 9;
                 }
+                // intArray[] 안에 9로 넣어도 결과는 같습니다!
+                intArray[intArray.length-1] = result;
+
+
             }
+
+
+
+
+
+
+
+
+
 
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
