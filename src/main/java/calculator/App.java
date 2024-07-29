@@ -15,6 +15,7 @@ public class App {
         // removeString 이라는 문자를 사용하기 위한 선언. "remove" 라는 문자를 받기 위함입니다. 1-7
         // 위쪽에 선언을 지우고 밑에서 값을 입히면서
         // String removeString = sc.next(); 로 하려 했으나 textString 이 오류가 남.
+        String inquiryString;
 
 
 
@@ -112,11 +113,20 @@ public class App {
 //
 //
 //            }
+            removeString = sc.nextLine(); // 안에 있던 enter 값 삭제를 위해. (버퍼)
             // remove 라는 값을 입력받으면 가장 먼저 입력된 결과가 삭제될 수 있도록 구현. 첫번째 인덱스 intList.remove(0);
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
-            removeString = sc.next();
-            if( removeString == "remove") {
+             removeString = sc.nextLine();
+            if( removeString.equals("remove")) {
                 intList.remove(0);
+            }
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            inquiryString = sc.nextLine();
+            if(inquiryString.equals("inquiry")){
+                for(int list: intList){
+                    System.out.println(list);
+                }
             }
 
 
@@ -132,7 +142,7 @@ public class App {
 
             // 위에 있는 int num2 = sc.nextInt(); 참고했고,
             // 숫자가 아니라서 Int 는 지우고 적어봤습니다.
-            textString = sc.next();
+            textString = sc.nextLine();
 
             // 2주차 강의 2-6 if 에서 가위바위보 Objects.eqauls 를 참고해서 넣었습니다.
             // 해당 강의에서는 nextLine 을 사용했었는데
