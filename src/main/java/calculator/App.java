@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 //Queue 배열을 사용하기 위해 2개의 import 추가. 2주차 2-16 강의 참고했습니다.
 
@@ -10,10 +11,22 @@ public class App {
         Scanner sc = new Scanner(System.in);
         // textString 이라는 문자를 사용하기 위한 선언. "exit" 라는 문자를 받기 위함입니다.
         String textString;
+        String removeString;
+        // removeString 이라는 문자를 사용하기 위한 선언. "remove" 라는 문자를 받기 위함입니다. 1-7
+        // 위쪽에 선언을 지우고 밑에서 값을 입히면서
+        // String removeString = sc.next(); 로 하려 했으나 textString 이 오류가 남.
 
-        int intArray[] = new int[10];
-        int count = 0;
-        //10개짜리 배열 선언,생성 / 저장하는 변수 선언. count
+
+
+
+
+        // 10개짜리 배열 선언,생성 / 저장하는 변수 선언. count
+        // int intArray[] = new int[10];
+        // int count = 0; 정적 배열은 1-7 을 수행하기 위해 주석처리 했습니다.
+
+        //1-7 무한이 저장될 수 있도록 동적 배열 생성했습니다.
+        ArrayList<Integer> intList =new ArrayList<Integer>();
+
 
 
         // 반복문 do -while 을 사용했습니다.while 이 false 가 나오기 전까지 반복됩니다.
@@ -77,25 +90,34 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            intArray[count]=result;
-            count++;
+            // 새로 생성된 동적 배열에 결과값 넣기.
+            intList.add(result);
+
+            //intArray[count]=result; 정적 배열 결과값 넣던 방식 주석처리.
+
+            //count++; 어차피 값이 쭉쭉 들어간다.
 
 
             // if 10개가 꽉 찼을 때, for 문을 사용해서 앞으로 한 칸 씩 밀어줬습니다.
             // count 값을 9로 설정해서. 마지막 칸에 새로운 결과값이 입력되도록 했습니다.
-            if(count == intArray.length) {
-
-                for (int i = 0; i < intArray.length-1; i++) {
-                    intArray[i] = intArray[i + 1];
-                    System.out.println(" 저장 공간이 꽉 차서 앞으로 한칸씩 이동합니다.");
-                   count = 9;
-                }
-                // intArray[] 안에 9로 넣어도 결과는 같습니다!
-                intArray[intArray.length-1] = result;
-
-
+//            if(count == intArray.length) {
+//
+//                for (int i = 0; i < intArray.length-1; i++) {
+//                    intArray[i] = intArray[i + 1];
+//                    System.out.println(" 저장 공간이 꽉 차서 앞으로 한칸씩 이동합니다.");
+//                   count = 9;
+//                }
+//                // intArray[] 안에 9로 넣어도 결과는 같습니다!
+//                intArray[intArray.length-1] = result;
+//
+//
+//            }
+            // remove 라는 값을 입력받으면 가장 먼저 입력된 결과가 삭제될 수 있도록 구현. 첫번째 인덱스 intList.remove(0);
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            removeString = sc.next();
+            if( removeString == "remove") {
+                intList.remove(0);
             }
-
 
 
 
