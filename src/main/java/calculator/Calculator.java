@@ -6,12 +6,22 @@ public class Calculator {
 
 
     //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
-    ArrayList<Double> doubleList =new ArrayList<>();
+    // private 추가 = App 클래스의 main 메서드에서
+    // Calculator 클래스의 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정합니다. (캡슐화)
+    private ArrayList<Double> doubleList =new ArrayList<>();
     //받을 숫자 2개 생성 num1 첫번째, num2 두번째
     int num1 =0;
     int num2 =0;
     double result =0;
     char operator;
+
+    public ArrayList<Double> getDoubleList(){ //가져온다.
+        return doubleList;
+    }
+
+    public void setDoubleList(ArrayList<Double> doubleList){ // 정한다.
+        this.doubleList =doubleList;
+    }
 
 
     //반환 타입,결과값 double 로 변경.

@@ -22,7 +22,7 @@ public class App {
 
 
         //1-7 무한이 저장될 수 있도록 동적 배열 생성했습니다.
-        ArrayList<Integer> intList =new ArrayList<Integer>();
+        ArrayList<Double> List =new ArrayList<Double>();
 
         // 반복문 do -while 을 사용했습니다.while 이 false 가 나오기 전까지 반복됩니다.
         // 반복 여부 상관없이 첫번째 계산값은 나타내고 싶어서 do -while 을 사용했습니다.
@@ -73,7 +73,7 @@ public class App {
             default:
             {System.out.println("잘못 입력하셨습니다.");
                 break;} }
-
+            plus.addList();
             System.out.println("결과: " + plus.result);
 
             removeString = sc.nextLine(); // 안에 있던 enter 값 삭제를 위해. (버퍼)
@@ -81,13 +81,14 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
              removeString = sc.nextLine();
             if( removeString.equals("remove")) {
-                plus.doubleList.remove(0);
+                plus.getDoubleList().remove(0); // 앞에 get 추가.
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             inquiryString = sc.nextLine();
             if(inquiryString.equals("inquiry")){
-                for(double list: plus.doubleList){
+                List = plus.getDoubleList();
+                for(double list: List){
                     System.out.println(list);
                 }
             }
