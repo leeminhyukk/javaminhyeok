@@ -9,15 +9,30 @@ public class Calculator {
     // private 추가 = App 클래스의 main 메서드에서
     // Calculator 클래스의 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정합니다. (캡슐화)
     private ArrayList<Double> doubleList;
+
+    private ArrayList<Double> circleList;
+
     //받을 숫자 2개 생성 num1 첫번째, num2 두번째
     int num1 =0;
     int num2 =0;
     double result =0;
     char operator;
+    int radius;
+    double circlearea;
 
-    //생성자 구현.
+    public static final double Pi = 3.14; // static 이라 어디서든 쓰이는데 final 로 해야 값을 수정하거나 삭제를 할 수 없기때문에.
+
+    public double calculateCircleArea(int radius){
+        circlearea = radius * radius * Pi;
+        return circlearea;
+
+    }
+
+
+    //생성자 구현. circleList 도 초기화 되도록 수정.2-7
     public Calculator() {
         doubleList =new ArrayList<>();
+        circleList =new ArrayList<>();
     }
 
     // 삭제 기능 추가.
@@ -29,6 +44,12 @@ public class Calculator {
             System.out.println(list);
         }
     }
+    // 원의 넓이 조회하는 기능.
+    public void inquirycircleResult(){
+        for(double list: circleList){
+            System.out.println(list);
+        }
+    }
 
     public ArrayList<Double> getDoubleList(){ //가져온다.
         return doubleList;
@@ -36,6 +57,15 @@ public class Calculator {
 
     public void setDoubleList(ArrayList<Double> doubleList){ // 정한다.
         this.doubleList =doubleList;
+    }
+    // get, set 그대로 원의 넓이에 적용.
+
+    public ArrayList<Double> getCircleList(){ //가져온다.
+        return circleList;
+    }
+
+    public void setCircleList(ArrayList<Double> circleList){ // 정한다.
+        this.circleList =circleList;
     }
 
 
@@ -73,6 +103,11 @@ public class Calculator {
     public void addList(){
         doubleList.add(result);
     }
+    //결과값 저장하는 곳 추가. 산술이랑 같음.
+    public void addCircleList(){
+        circleList.add(circlearea);
+    }
+
 
                     //예외처리. 구글링 참고
 
