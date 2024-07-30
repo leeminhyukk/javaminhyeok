@@ -19,7 +19,10 @@ public class App {
         String inquiryString;
         // 메서드 외 접근 호출.
         // 생성자 부분 수정 필요 x. 2-6
+        // 생성자 두개 추가. 2-8 -> plus 중 산술은 arith 로 원의 넓이는 circle 로 수정
         Calculator plus = new Calculator();
+        ArithmeticCalculator arith = new ArithmeticCalculator();
+        CircleCalculator circle = new CircleCalculator();
 
 
         //1-7 무한이 저장될 수 있도록 동적 배열 생성했습니다.
@@ -59,17 +62,17 @@ public class App {
                 switch (operator) {
                     // case 뒤에는 조건!! 변수에 따라 뒤에 result 값이 이렇게 계산되고, break 되도록 설정했습니다.
                     case '+':
-                        plus.addCalculate(num1, '+', num2);
+                        arith.addCalculate(num1, '+', num2);
                         break;
                     case '-':
-                        plus.subCalculate(num1, '-', num2);
+                        arith.subCalculate(num1, '-', num2);
                         break;
                     case '*':
-                        plus.mulCalculate(num1, '*', num2);
+                        arith.mulCalculate(num1, '*', num2);
                         break;
                     case '/':
                         if (num2 != 0) {
-                            plus.divCalculate(num1, '/', num2);
+                            arith.divCalculate(num1, '/', num2);
                         } else {
                             System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                             //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자로 입력했습니다.
@@ -83,21 +86,21 @@ public class App {
                         break;
                     }
                 }
-                plus.addList();
-                System.out.println("결과: " + plus.result);
+                arith.addList();
+                System.out.println("결과: " + arith.result);
 
                 removeString = sc.nextLine(); // 안에 있던 enter 값 삭제를 위해. (버퍼)
                 // remove 라는 값을 입력받으면 가장 먼저 입력된 결과가 삭제될 수 있도록 구현. 첫번째 인덱스 intList.remove(0);
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 removeString = sc.nextLine();
                 if (removeString.equals("remove")) {
-                    plus.removeResult(); // 앞에 get 추가. // 2-4 에서 Calculator 에서 처리하도록 수정.
+                    arith.removeResult(); // 앞에 get 추가. // 2-4 에서 Calculator 에서 처리하도록 수정.
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 inquiryString = sc.nextLine();
                 if (inquiryString.equals("inquiry")) {
-                    plus.inquiryResult();
+                    arith.inquiryResult();
                     // 2-5 조회기능 구현.
                 }
 
@@ -119,8 +122,8 @@ public class App {
             System.out.println("반지름을 입력해주세요.");
             int radius = sc.nextInt();
             sc.nextLine();
-            double circlearea = plus.calculateCircleArea(radius); // 원의 넓이 저장.
-            plus.addCircleList();
+            double circlearea = circle.calculateCircleArea(radius); // 원의 넓이 저장.
+            circle.addCircleList();
             System.out.println("원의 넓이 : " + circlearea); // 원의 넓이 출력.
 
 //            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
@@ -132,7 +135,7 @@ public class App {
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             inquiryString = sc.nextLine();
             if (inquiryString.equals("inquiry")) {
-                plus.inquirycircleResult();
+                circle.inquirycircleResult();
                 // 2-7 원의 넓이 조회기능 구현.
             }
 

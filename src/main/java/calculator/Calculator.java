@@ -1,16 +1,17 @@
 package calculator;
 
 import java.util.ArrayList;
-
+// 힌트를 보고 static 을 넣어볼지 고민.
 public class Calculator {
 
 
     //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
     // private 추가 = App 클래스의 main 메서드에서
     // Calculator 클래스의 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정합니다. (캡슐화)
-    private ArrayList<Double> doubleList;
+    // private -> protected 로 수정. 상속받은 애들도 사용 가능.
+    protected ArrayList<Double> doubleList;
 
-    private ArrayList<Double> circleList;
+    protected ArrayList<Double> circleList;
 
     //받을 숫자 2개 생성 num1 첫번째, num2 두번째
     int num1 =0;
