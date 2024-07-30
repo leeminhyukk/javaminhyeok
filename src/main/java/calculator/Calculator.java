@@ -1,9 +1,13 @@
 package calculator;
-
+import Operator.*; // Operator 에 있는 건 전부 다 임포트. 포함관계.
 import java.util.ArrayList;
 // 힌트를 보고 static 을 넣어볼지 고민.
 public class Calculator {
-
+    // 사칙연산 클래스 선언. 사용하기 위해 임포트.
+    AddOperator addOperator;
+    SubtractOperator subtractOperator;
+    MultiplyOperator multiplyOperator;
+    DivideOperator divideOperator;
 
     //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
     // private 추가 = App 클래스의 main 메서드에서
@@ -34,6 +38,11 @@ public class Calculator {
     public Calculator() {
         doubleList =new ArrayList<>();
         circleList =new ArrayList<>();
+        addOperator = new AddOperator();
+        subtractOperator = new SubtractOperator();
+        multiplyOperator = new MultiplyOperator();
+        divideOperator = new DivideOperator();
+        // 생성하면서 초기화!
     }
 
     // 삭제 기능 추가.
@@ -101,7 +110,7 @@ public class Calculator {
 
 
     }
-    public void addList(){
+    public void addList(double result){
         doubleList.add(result);
     }
     //결과값 저장하는 곳 추가. 산술이랑 같음.

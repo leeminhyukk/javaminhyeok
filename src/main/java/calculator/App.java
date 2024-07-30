@@ -62,23 +62,21 @@ public class App {
                 switch (operator) {
                     // case 뒤에는 조건!! 변수에 따라 뒤에 result 값이 이렇게 계산되고, break 되도록 설정했습니다.
                     case '+':
-                        arith.addCalculate(num1, '+', num2);
+                        // 더한 값을 result 에 저장.
+                         result = arith.addOperator.addnum(num1,num2);
+
                         break;
                     case '-':
-                        arith.subCalculate(num1, '-', num2);
+                        result = arith.subtractOperator.subnum(num1,num2);
                         break;
                     case '*':
-                        arith.mulCalculate(num1, '*', num2);
+                        result = arith.multiplyOperator.multinum(num1,num2);
                         break;
                     case '/':
-                        if (num2 != 0) {
-                            arith.divCalculate(num1, '/', num2);
-                        } else {
-                            System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                            //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자로 입력했습니다.
-                            throw new ArithmeticException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                        result = arith.divideOperator.dividenum(num1,num2);
+                        break;
 
-                        }
+
 
                         // 위에 값 중 예상된 값이 입력되지 않을 경우. ex. 기호 자리에 숫자입력.
                     default: {
@@ -86,8 +84,9 @@ public class App {
                         break;
                     }
                 }
-                arith.addList();
-                System.out.println("결과: " + arith.result);
+                //리스트에 추가되는 값 변경.(Calculator)  + 출력값 변경. (App)
+                arith.addList(result);
+                System.out.println("결과: " + result);
 
                 removeString = sc.nextLine(); // 안에 있던 enter 값 삭제를 위해. (버퍼)
                 // remove 라는 값을 입력받으면 가장 먼저 입력된 결과가 삭제될 수 있도록 구현. 첫번째 인덱스 intList.remove(0);
