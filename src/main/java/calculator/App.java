@@ -16,6 +16,7 @@ public class App {
         // 위쪽에 선언을 지우고 밑에서 값을 입히면서
         // String removeString = sc.next(); 로 하려 했으나 textString 이 오류가 남.
         String inquiryString;
+        Calculator Calc = new Calculator();
 
 
 
@@ -54,41 +55,12 @@ public class App {
             int result = 0;
 
             //사칙연산 기호를 저장한 변수 = operator
-            switch (operator) {
 
-                // case 뒤에는 조건!! 변수에 따라 뒤에 result 값이 이렇게 계산되고, break 되도록 설정했습니다.
-                case '+':
-                    result = num1 + num2;
-
-                    break;
-
-                case '-':
-                    result = num1 - num2;
-
-                    break;
-
-                case '*':
-                    result = num1 * num2;
-
-                    break;
-
-                case '/':
-
-                    if (num2 != 0) {
-                        result = num1 / num2;
-
-                    } else {
-                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                        //결과값을 아예 텍스트로 표현하고 싶지만 result 는 int result 로 선언했기 때문에 숫자로 입력했습니다.
-                        result = 999999999;
-                        break;
-                    }
                     // 위에 값 중 예상된 값이 입력되지 않을 경우. ex. 기호 자리에 숫자입력.
 
-                default:
-                    System.out.println("잘못 입력하셨습니다.");
 
-            }
+
+
             System.out.println("결과: " + result);
 
             // 새로 생성된 동적 배열에 결과값 넣기.
