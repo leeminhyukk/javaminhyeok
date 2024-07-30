@@ -15,6 +15,14 @@ public class Calculator {
     double result =0;
     char operator;
 
+    // 삭제 기능 추가.
+    public void removeResult(){
+        doubleList.remove(0);
+    }
+
+    private ThreadLocal<Object> doubleList() {
+    }
+
     public ArrayList<Double> getDoubleList(){ //가져온다.
         return doubleList;
     }

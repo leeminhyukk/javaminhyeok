@@ -81,7 +81,7 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
              removeString = sc.nextLine();
             if( removeString.equals("remove")) {
-                plus.getDoubleList().remove(0); // 앞에 get 추가.
+                plus.removeResult(); // 앞에 get 추가. // 2-4 에서 Calculator 에서 처리하도록 수정.
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
