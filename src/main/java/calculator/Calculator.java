@@ -19,8 +19,10 @@ public class Calculator {
     public void removeResult(){
         doubleList.remove(0);
     }
-
-    private ThreadLocal<Object> doubleList() {
+    public void inquiryResult(){
+        for(double list: doubleList){
+            System.out.println(list);
+        }
     }
 
     public ArrayList<Double> getDoubleList(){ //가져온다.
