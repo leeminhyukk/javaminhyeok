@@ -18,6 +18,7 @@ public class App {
 
         String inquiryString;
         // 메서드 외 접근 호출.
+        // 생성자 부분 수정 필요 x. 2-6
         Calculator plus = new Calculator();
 
 
