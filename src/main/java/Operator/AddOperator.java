@@ -1,11 +1,11 @@
 package Operator;
 
-public class AddOperator {
+public class AddOperator implements Operator{
     public AddOperator(){
 
     }
 
-    public double addnum(int num1 , int num2){
+    public double operate(int num1 , int num2){
         return num1 + num2;
 
     }

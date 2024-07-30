@@ -63,18 +63,23 @@ public class App {
                     // case 뒤에는 조건!! 변수에 따라 뒤에 result 값이 이렇게 계산되고, break 되도록 설정했습니다.
                     case '+':
                         // 더한 값을 result 에 저장.
-                         result = arith.addOperator.addnum(num1,num2);
+                        // operate 로 수정.
+                         result = arith.addOperator.operate(num1,num2);
 
                         break;
                     case '-':
-                        result = arith.subtractOperator.subnum(num1,num2);
+                        result = arith.subtractOperator.operate(num1,num2);
                         break;
                     case '*':
-                        result = arith.multiplyOperator.multinum(num1,num2);
+                        result = arith.multiplyOperator.operate(num1,num2);
                         break;
                     case '/':
-                        result = arith.divideOperator.dividenum(num1,num2);
+                        result = arith.divideOperator.operate(num1,num2);
                         break;
+                    case '%':
+                        result = arith.modOperator.operate(num1,num2);
+                        break;
+                        // % 도 인터페이스 이용해서 만들고 추가.
 
 
 

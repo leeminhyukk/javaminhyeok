@@ -1,15 +1,13 @@
 package Operator;
 
-
-public class DivideOperator implements Operator{
-    public DivideOperator(){
+public class ModOperator implements Operator {
+    public ModOperator() {
 
     }
 
-    public double operate(int num1 , int num2){
-
+    public double operate(int num1, int num2) {
         if (num2 != 0){
-            return  num1 / num2;
+            return num1 % num2;
 
         } else {
             throw new ArithmeticException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");

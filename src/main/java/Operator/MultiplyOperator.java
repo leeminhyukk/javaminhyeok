@@ -1,12 +1,12 @@
 package Operator;
 
 
-public class MultiplyOperator {
+public class MultiplyOperator implements Operator{
     public MultiplyOperator(){
 
     }
 
-    public double multinum(int num1 , int num2){
+    public double operate(int num1 , int num2){
         return num1 * num2;
 
     }

@@ -8,6 +8,7 @@ public class Calculator {
     SubtractOperator subtractOperator;
     MultiplyOperator multiplyOperator;
     DivideOperator divideOperator;
+    ModOperator    modOperator; // 선언
 
     //연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
     // private 추가 = App 클래스의 main 메서드에서
@@ -42,6 +43,7 @@ public class Calculator {
         subtractOperator = new SubtractOperator();
         multiplyOperator = new MultiplyOperator();
         divideOperator = new DivideOperator();
+        modOperator = new ModOperator();
         // 생성하면서 초기화!
     }
 
